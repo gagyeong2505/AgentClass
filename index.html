@@ -3733,8 +3733,32 @@ def make_card(bg, text_color, title, ...):
             <h3 class="mt-3 font-bold text-gray-900">Desktop에서 실행하는 Code 탭</h3>
             <ul class="mt-4 space-y-2 text-sm text-gray-600">
               <li>Desktop 앱 안에서 Claude Code 실행</li>
-              <li><code class="font-mono text-gray-900">claude --resume</code>으로 CLI와 세션 공유</li>
-              <li><code class="font-mono text-gray-900">/ide</code> 명령으로 VS Code와 연결</li>
+              <li>CLI와 세션 공유</li>
+              <li>
+                <div class="mt-2 overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm">
+                  <div class="flex items-center justify-between bg-gray-800 px-3 py-2">
+                    <span class="text-xs font-medium text-gray-400">COMMAND</span>
+                    <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white cursor-pointer z-20">
+                      <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                      <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-400 pointer-events-none"></i>복사됨</span>
+                    </button>
+                  </div>
+                  <div class="overflow-x-auto p-3 text-sm font-mono text-green-400"><pre><code>claude --resume</code></pre></div>
+                </div>
+              </li>
+              <li>VS Code와 연결</li>
+              <li>
+                <div class="mt-2 overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm">
+                  <div class="flex items-center justify-between bg-gray-800 px-3 py-2">
+                    <span class="text-xs font-medium text-gray-400">COMMAND</span>
+                    <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white cursor-pointer z-20">
+                      <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                      <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-400 pointer-events-none"></i>복사됨</span>
+                    </button>
+                  </div>
+                  <div class="overflow-x-auto p-3 text-sm font-mono text-green-400"><pre><code>/ide</code></pre></div>
+                </div>
+              </li>
             </ul>
           </div>
 
@@ -3791,6 +3815,13 @@ def make_card(bg, text_color, title, ...):
           <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <span class="text-xs font-bold text-gray-400 tracking-widest">명령어 기본 구조</span>
             <div class="mt-3 overflow-hidden rounded-lg border border-gray-200 bg-gray-50 shadow-sm">
+              <div class="flex items-center justify-between bg-gray-100 px-4 py-2 border-b border-gray-200">
+                <span class="text-xs font-medium text-gray-500">COMMAND STRUCTURE</span>
+                <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-500 transition hover:bg-gray-200 hover:text-gray-900 cursor-pointer z-20">
+                  <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                  <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600 pointer-events-none"></i>복사됨</span>
+                </button>
+              </div>
               <div class="overflow-x-auto p-4 text-sm font-mono text-gray-800"><pre><code>[도구] [명령] [--옵션] [인수]</code></pre></div>
             </div>
           </div>
@@ -3826,19 +3857,66 @@ def make_card(bg, text_color, title, ...):
           </div>
           <div class="rounded-xl border border-gray-100 bg-gray-50/50 p-5">
             <h4 class="font-bold text-gray-900 mb-3 text-sm">2단계: gh 설치</h4>
-            <p class="text-sm font-mono text-blue-700">winget install GitHub.cli</p>
-            <p class="mt-2 text-sm font-mono text-blue-700">brew install gh</p>
+            <div class="space-y-3">
+              <div class="overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm">
+                <div class="flex items-center justify-between bg-gray-800 px-3 py-2">
+                  <span class="text-xs font-medium text-gray-400">WINDOWS</span>
+                  <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white cursor-pointer z-20">
+                    <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                    <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-400 pointer-events-none"></i>복사됨</span>
+                  </button>
+                </div>
+                <div class="overflow-x-auto p-3 text-xs font-mono text-green-400"><pre><code>winget install GitHub.cli</code></pre></div>
+              </div>
+              <div class="overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm">
+                <div class="flex items-center justify-between bg-gray-800 px-3 py-2">
+                  <span class="text-xs font-medium text-gray-400">MACOS</span>
+                  <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white cursor-pointer z-20">
+                    <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                    <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-400 pointer-events-none"></i>복사됨</span>
+                  </button>
+                </div>
+                <div class="overflow-x-auto p-3 text-xs font-mono text-green-400"><pre><code>brew install gh</code></pre></div>
+              </div>
+            </div>
           </div>
           <div class="rounded-xl border border-gray-100 bg-gray-50/50 p-5">
             <h4 class="font-bold text-gray-900 mb-3 text-sm">3단계: 인증 확인</h4>
-            <p class="text-sm font-mono text-blue-700">gh auth login</p>
-            <p class="mt-2 text-sm font-mono text-blue-700">gh auth status</p>
+            <div class="space-y-3">
+              <div class="overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm">
+                <div class="flex items-center justify-between bg-gray-800 px-3 py-2">
+                  <span class="text-xs font-medium text-gray-400">COMMAND</span>
+                  <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white cursor-pointer z-20">
+                    <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                    <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-400 pointer-events-none"></i>복사됨</span>
+                  </button>
+                </div>
+                <div class="overflow-x-auto p-3 text-xs font-mono text-green-400"><pre><code>gh auth login</code></pre></div>
+              </div>
+              <div class="overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm">
+                <div class="flex items-center justify-between bg-gray-800 px-3 py-2">
+                  <span class="text-xs font-medium text-gray-400">COMMAND</span>
+                  <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white cursor-pointer z-20">
+                    <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                    <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-400 pointer-events-none"></i>복사됨</span>
+                  </button>
+                </div>
+                <div class="overflow-x-auto p-3 text-xs font-mono text-green-400"><pre><code>gh auth status</code></pre></div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
           <span class="text-xs font-bold text-gray-400 tracking-widest">스킬 제작 실습</span>
           <div class="mt-3 overflow-hidden rounded-lg border border-blue-200 bg-blue-50 shadow-sm">
+            <div class="flex items-center justify-between bg-blue-100 px-4 py-2 border-b border-blue-200">
+              <span class="text-xs font-medium text-blue-500">PROMPT</span>
+              <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-blue-600 transition hover:bg-blue-200 hover:text-blue-900 cursor-pointer z-20">
+                <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600 pointer-events-none"></i>복사됨</span>
+              </button>
+            </div>
             <div class="overflow-x-auto p-4 text-sm font-mono text-blue-700"><pre><code>gh cli로 내 저장소 목록과 최근 PR 상태를 정리해주는 스킬을 만들어줘</code></pre></div>
           </div>
           <p class="mt-4 text-sm text-gray-600">예상 결과: Claude가 SKILL.md와 실행 스크립트를 만들고, gh 명령을 조합해 GitHub 상태를 요약합니다.</p>
@@ -3858,9 +3936,23 @@ def make_card(bg, text_color, title, ...):
             <span class="text-xs font-bold text-gray-400 tracking-widest">설치와 기본 사용법</span>
             <div class="mt-3 grid md:grid-cols-2 gap-4">
               <div class="overflow-hidden rounded-lg border border-gray-200 bg-gray-50 shadow-sm">
+                <div class="flex items-center justify-between bg-gray-100 px-4 py-2 border-b border-gray-200">
+                  <span class="text-xs font-medium text-gray-500">COMMAND</span>
+                  <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-500 transition hover:bg-gray-200 hover:text-gray-900 cursor-pointer z-20">
+                    <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                    <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600 pointer-events-none"></i>복사됨</span>
+                  </button>
+                </div>
                 <div class="overflow-x-auto p-4 text-sm font-mono text-blue-700"><pre><code>npm install -g @google/gemini-cli</code></pre></div>
               </div>
               <div class="overflow-hidden rounded-lg border border-gray-200 bg-gray-50 shadow-sm">
+                <div class="flex items-center justify-between bg-gray-100 px-4 py-2 border-b border-gray-200">
+                  <span class="text-xs font-medium text-gray-500">COMMAND</span>
+                  <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-500 transition hover:bg-gray-200 hover:text-gray-900 cursor-pointer z-20">
+                    <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                    <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600 pointer-events-none"></i>복사됨</span>
+                  </button>
+                </div>
                 <div class="overflow-x-auto p-4 text-sm font-mono text-blue-700"><pre><code>gemini -p "질문이나 지시사항"</code></pre></div>
               </div>
             </div>
@@ -3869,9 +3961,26 @@ def make_card(bg, text_color, title, ...):
           <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <span class="text-xs font-bold text-gray-400 tracking-widest">Claude에게 스킬 제작 요청</span>
             <div class="mt-3 overflow-hidden rounded-lg border border-blue-200 bg-blue-50 shadow-sm">
+              <div class="flex items-center justify-between bg-blue-100 px-4 py-2 border-b border-blue-200">
+                <span class="text-xs font-medium text-blue-500">PROMPT</span>
+                <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-blue-600 transition hover:bg-blue-200 hover:text-blue-900 cursor-pointer z-20">
+                  <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                  <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-600 pointer-events-none"></i>복사됨</span>
+                </button>
+              </div>
               <div class="overflow-x-auto p-4 text-sm font-mono text-blue-700"><pre><code>bash로 gemini -p 를 호출해서 내 질문에 Gemini가 답하는 스킬을 만들어줘</code></pre></div>
             </div>
-            <p class="mt-4 text-sm text-gray-600">예상 결과: <code class="font-mono text-gray-900">/ask-gemini</code> 스킬을 통해 Claude 안에서 Gemini에게 의견을 물어볼 수 있습니다.</p>
+            <p class="mt-4 text-sm text-gray-600">예상 결과: 아래 스킬을 통해 Claude 안에서 Gemini에게 의견을 물어볼 수 있습니다.</p>
+            <div class="mt-3 overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm">
+              <div class="flex items-center justify-between bg-gray-800 px-3 py-2">
+                <span class="text-xs font-medium text-gray-400">SKILL</span>
+                <button type="button" onclick="copyCode(this)" class="flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-300 transition hover:bg-gray-700 hover:text-white cursor-pointer z-20">
+                  <span class="default-state flex items-center gap-1.5"><i data-lucide="copy" class="w-3.5 h-3.5 pointer-events-none"></i>복사</span>
+                  <span class="copied-state flex items-center gap-1.5 hidden"><i data-lucide="check" class="w-3.5 h-3.5 text-green-400 pointer-events-none"></i>복사됨</span>
+                </button>
+              </div>
+              <div class="overflow-x-auto p-3 text-sm font-mono text-green-400"><pre><code>/ask-gemini</code></pre></div>
+            </div>
           </div>
         </div>
 
